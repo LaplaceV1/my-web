@@ -3,63 +3,64 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Obfuscation Studio — Lann.exe</title>
-<link rel="icon" href="favicon.ico" />
+<title>Obfuscation Studio — Lann</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<nav class="nav">
-  <div class="nav-left">Lann</div>
-  <div class="nav-right">
+<header class="nav-wrap">
+  <nav class="nav">
     <a href="index.html">HOME</a>
-    <a href="obfuscation.html" class="active">OBFUSCATION</a>
+    <a href="obfuscation.html">OBFUSCATION</a>
     <a href="#">TOOLS</a>
-  </div>
-</nav>
+    <a href="#">RESEARCH</a>
+  </nav>
+</header>
 
-<section class="obs-hero">
-  <div class="obs-left">
-    <h1>Obfuscation Studio</h1>
-    <p class="muted">Visual obfuscation preview • Demo mode • Export visual report</p>
-
-    <label for="codeIn">Input (JS snippet) — Demo only</label>
-    <textarea id="codeIn" placeholder="// paste small JS snippet (demo)"></textarea>
-
-    <div class="controls">
-      <select id="preset">
-        <option value="light">Premium (recommended)</option>
-        <option value="hard">Hard (visual demo)</option>
-        <option value="ultra">Ultra (visual demo)</option>
-      </select>
-      <button id="runBtn" class="btn">Run Obfuscation (Demo)</button>
+<main class="obf-main">
+  <section class="obf-hero">
+    <h1>Open Obfuscation Studio</h1>
+    <p class="lead">High-end cyberpunk obfuscation. Anti-analysis, control-flow hardening, virtualized preview.</p>
+    <div class="action-row">
+      <a class="btn primary" href="#">Try Visual Demo</a>
+      <a class="btn ghost" href="#">Docs</a>
     </div>
+  </section>
 
-    <div class="log" id="log">
-      <div class="log-title">Process Log</div>
-      <div class="log-body" id="logBody">— ready —</div>
+  <section class="features">
+    <article>
+      <h3>Anti-Analysis</h3>
+      <p>Virtualized preview • visual-only demo • runtime guards</p>
+    </article>
+    <article>
+      <h3>Premium UI</h3>
+      <p>Dark cyberpunk interface with live previews and diffing.</p>
+    </article>
+    <article>
+      <h3>Licensing</h3>
+      <p>Closed license support and integrity checks.</p>
+    </article>
+  </section>
+
+  <section class="preview">
+    <div class="preview-left">
+      <h4>Visualized Preview</h4>
+      <div class="preview-window">/* visual demo placeholder */</div>
     </div>
-  </div>
-
-  <div class="obs-right">
-    <div class="preview-card">
-      <div class="preview-header">
-        <div>Preview</div>
-        <div class="preview-badges">
-          <span class="badge">visual-only</span>
-          <span class="badge">safe</span>
-        </div>
-      </div>
-
-      <pre id="preview" class="preview">// obfuscated code preview will appear here</pre>
-
-      <div class="export-row">
-        <button id="downloadBtn" class="btn ghost">Download Report</button>
-        <button id="copyBtn" class="btn">Copy Preview</button>
-      </div>
+    <div class="preview-right">
+      <h4>Settings</h4>
+      <ul class="setting-list">
+        <li>String Encryption <input type="checkbox" checked></li>
+        <li>Control Flow <input type="checkbox" checked></li>
+        <li>Anti-Debug <input type="checkbox"></li>
+        <li>Virtualize <input type="checkbox"></li>
+      </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<script src="js/obfuscator.js"></script>
+  <footer class="obf-footer">
+    <p>© Lann.exe — Obfuscation Studio</p>
+  </footer>
+</main>
+
 </body>
 </html>
