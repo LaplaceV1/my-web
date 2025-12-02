@@ -1,0 +1,112 @@
+:root{
+  --bg: #f3f2ef;
+  --accent: #e63737;
+  --text: #0a0a0a;
+  --muted: #6b6b6b;
+  --glass: rgba(255,255,255,0.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* top nav */
+.topbar{position:fixed;left:0;right:0;top:0;z-index:60}
+.nav{
+  display:flex;
+  justify-content:flex-start;
+  gap:52px;
+  padding:28px 60px;
+  align-items:center;
+}
+.nav-item{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+/* hero */
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;padding-top:36px}
+.hero-inner{width:100%;max-width:1400px;position:relative;padding:20px 60px;display:flex;align-items:center;}
+
+/* left block */
+.left-block{width:40%;min-width:320px;padding-left:10px; z-index:10}
+.script-title{font-family:"Brush Script MT",cursive;font-size:84px;color:#111;margin:0}
+.hero-subtitle{font-size:34px;color:var(--accent);margin:6px 0 8px 0}
+.typewriter{color:#111;font-size:18px;font-weight:600;margin-top:6px;min-height:28px;}
+
+/* big bg title */
+.bg-title{
+  position:absolute;
+  left:50%;
+  top:22%;
+  transform:translate(-20%, -10%);
+  font-size:160px;
+  font-weight:900;
+  color:var(--accent);
+  opacity:.18;
+  white-space:nowrap;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* particles canvas behind image */
+.particles-canvas{position:absolute;right:18%;top:12%;width:540px;height:540px;z-index:2;pointer-events:none}
+
+/* mask glow */
+.mask-glow{position:absolute;right:14%;top:14%;width:450px;height:450px;border-radius:50%;z-index:2;pointer-events:none;
+  background:radial-gradient(circle at 35% 35%, rgba(230,55,55,0.28), transparent 40%);filter:blur(26px);opacity:.9}
+
+/* girl wrap */
+.girl-wrap{position:absolute;right:6%;top:8%;width:450px;height:auto;z-index:4;transform-origin:center center;display:flex;align-items:center;justify-content:center}
+#girl{display:block;width:450px;height:auto;border-radius:2px;box-shadow:0 30px 60px rgba(10,10,10,0.12)}
+
+/* subtle eye shine */
+.eye-shine{position:absolute;width:24px;height:24px;border-radius:50%;right:34%;top:30%;background:rgba(255,255,255,0.12);filter:blur(8px);pointer-events:none;z-index:5}
+
+/* floating, hairsway and glitch are combined in JS transforms. We still provide fallback animations */
+@keyframes float {
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+  100%{transform:translateY(0)}
+}
+
+/* small responsive */
+@media (max-width:900px){
+  .bg-title{font-size:100px;left:60%}
+  .left-block{width:50%}
+  .girl-wrap{right:6%;top:18%}
+  .nav{gap:26px;padding:16px}
+}
+
+/* ===== Loading overlay ===== */
+#loading{
+  position:fixed;inset:0;background:rgba(10,10,10,0.02);z-index:120;display:flex;align-items:center;justify-content:center;
+  backdrop-filter: blur(2px);
+}
+.loading-box{
+  padding:26px 36px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+  border:1px solid rgba(0,0,0,0.06);box-shadow:0 14px 50px rgba(10,10,10,0.08);font-family:monospace;color:#111;
+}
+.loading-lines{font-size:16px;line-height:1.9}
+.loader-dot{margin-top:10px;font-size:22px;color:var(--accent);animation:blink 1s infinite;}
+@keyframes blink{0%{opacity:0.15}50%{opacity:0.9}100%{opacity:0.15}}
+
+/* Obfuscation page styles */
+.obf-main{padding:120px 60px 80px}
+.obf-hero{display:flex;gap:40px;align-items:flex-start;justify-content:space-between}
+.obf-left{width:55%}
+.obf-title{font-size:36px;margin:0 0 10px}
+.obf-sub{color:var(--muted);margin:0 0 20px}
+.btn-primary{display:inline-block;padding:12px 18px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:700}
+.obf-right{width:40%;display:flex;flex-direction:column;gap:18px}
+.obf-card{background:white;padding:18px;border-radius:8px;box-shadow:0 6px 20px rgba(10,10,10,0.06)}
+.obf-features{padding:40px 60px}
