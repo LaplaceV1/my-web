@@ -1,0 +1,135 @@
+:root{
+  --bg:#0b0b0d;
+  --panel:#0f1113;
+  --accent:#ff3b3b;
+  --muted:#9aa3b2;
+  --glass: rgba(255,255,255,0.03);
+  --glass-strong: rgba(255,255,255,0.06);
+  --neon: rgba(255,59,59,0.18);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, Arial, Helvetica, sans-serif;background:linear-gradient(180deg,#071017 0%, #0b0b0d 60%);color:#e6eef6}
+
+/* NAV */
+.nav{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:18px 40px;
+  position:fixed;
+  top:0;
+  z-index:60;
+  backdrop-filter: blur(6px);
+}
+.nav-left{font-weight:800;color:var(--accent);letter-spacing:1px}
+.nav-right a{margin-left:18px;color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:6px}
+.nav-right a.active{color:#fff;background:var(--glass-strong)}
+
+/* LOADER */
+.loader-wrap{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:9999;
+  background:linear-gradient(180deg, rgba(3,3,3,0.9), rgba(3,3,3,0.6));
+  color:#dbeafe;
+}
+.loader-box{
+  padding:26px 36px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6);text-align:center;width:340px;
+}
+.loader-title{font-weight:800;color:var(--accent);margin-bottom:12px}
+.loader-lines{color:var(--muted);margin-bottom:14px;text-align:left;font-size:13px}
+.loader-spinner{font-size:22px;color:var(--accent);animation:blink 1s infinite}
+
+/* HERO */
+.hero{display:flex;gap:30px;align-items:center;justify-content:space-between;padding:110px 60px;min-height:100vh}
+.hero-left{width:48%}
+.brand{font-size:44px;font-weight:900;color:var(--accent);letter-spacing:1px}
+.typewriter{margin-top:16px;font-size:22px;color:#dfe9f8;min-height:48px}
+.cta{margin-top:20px}
+.btn{background:var(--accent);color:#0b0b0d;padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff}
+
+/* FEATURES */
+.features{display:flex;gap:12px;margin-top:28px}
+.feature{background:var(--glass);padding:12px;border-radius:10px;width:180px}
+.feature h4{margin:0;color:#fff;font-size:14px}
+.feature p{margin:6px 0 0;font-size:12px;color:var(--muted)}
+
+/* HERO RIGHT - SCENE */
+.hero-right{width:48%;display:flex;justify-content:center}
+.scene{position:relative;width:520px;height:520px;display:flex;align-items:center;justify-content:center}
+.scene img{width:440px;height:auto;position:relative;z-index:30;transform-origin:center center;transition:transform 0.2s ease-out;pointer-events:none;filter:drop-shadow(0 10px 40px rgba(0,0,0,0.6))}
+.mask-glow{position:absolute;width:420px;height:420px;border-radius:50%;z-index:20;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;background:radial-gradient(circle, rgba(255,27,27,0.28), transparent 55%);filter:blur(26px)}
+.eye-shine{position:absolute;width:80px;height:22px;border-radius:8px;z-index:40;left:50%;top:46%;transform:translate(-20%,-50%);mix-blend-mode:screen;pointer-events:none;background:linear-gradient(90deg,#fff5,#ff4646);opacity:0.0;animation:eyeflash 6s infinite}
+
+/* GLITCH + FLOAT + HAIR SWAY */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+@keyframes hairsway {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(1.2deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes eyeflash {
+  0% { opacity: 0; }
+  45% { opacity: 0; transform: translateX(0) scaleX(0.9); }
+  48% { opacity: 0.95; transform: translateX(6px) scaleX(1.05); }
+  52% { opacity: 0; }
+  100% { opacity: 0; }
+}
+.glitch{animation:glitch 3s infinite, float 4s ease-in-out infinite, hairsway 5s ease-in-out infinite}
+@keyframes glitch {
+  0% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  4% { clip-path: inset(2% 0 10% 0); transform: translate(4px, -1px); }
+  6% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  15% { clip-path: inset(40% 0 40% 0); transform: translate(-2px, 0); }
+  16% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+}
+
+/* PARTICLES canvas */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:10}
+
+/* wind canvas */
+.wind-canvas{position:absolute;inset:0;z-index:5;pointer-events:none}
+
+/* TYPEWRITER cursor */
+.typewriter:after{
+  content:"|";
+  color:var(--accent);
+  margin-left:8px;
+  animation:blink 1s steps(2, start) infinite;
+}
+
+/* PREVIEW / OB FOLDER styles (for obfuscation page) */
+.obs-hero{display:flex;gap:28px;padding:110px 60px}
+.obs-left{width:54%}
+.obs-right{width:46%}
+.obs-left textarea{
+  width:100%;height:180px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:8px;padding:12px;color:#dfe9f8;border:1px solid rgba(255,255,255,0.03);resize:vertical;font-family:monospace
+}
+.controls{display:flex;gap:10px;margin-top:12px;align-items:center}
+.controls select{background:transparent;color:#fff;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)}
+.log{margin-top:18px;background:var(--panel);padding:12px;border-radius:8px}
+.log-title{font-weight:700;color:var(--accent);margin-bottom:8px}
+.log-body{color:var(--muted);font-size:13px;white-space:pre-wrap;max-height:160px;overflow:auto;padding-right:8px}
+
+/* Preview card */
+.preview-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:10px}
+.preview-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.preview{background:#06060a;padding:12px;border-radius:8px;color:#bde0ff;height:260px;overflow:auto;font-family:monospace;font-size:13px}
+
+/* small helpers */
+.badge{background:rgba(255,255,255,0.04);padding:6px 8px;border-radius:6px;margin-left:6px;font-size:12px;color:var(--muted)}
+.muted{color:var(--muted)}
+@keyframes blink{50%{opacity:0.0}}
+
+/* Responsive */
+@media(max-width:980px){
+  .hero{flex-direction:column;padding:120px 18px}
+  .hero-left,.hero-right{width:100%}
+  .scene{width:360px;height:360px}
+}
