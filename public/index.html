@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -10,64 +10,57 @@
 <body>
 
 <!-- LOADING SCREEN -->
-<div id="loader-wrap" class="loader-wrap">
-  <div class="loader-box">
-    <div class="loader-title">Initializing Lann.exe...</div>
-    <div class="loader-lines">
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-box">
+    <div class="loading-lines">
+      <div>Initializing Lann.exe...</div>
       <div>Loading modules...</div>
       <div>Decrypting assets...</div>
       <div>Spawning virtual runtime...</div>
     </div>
-    <div class="loader-spinner">●</div>
+    <div class="loader-dot loader">•</div>
   </div>
 </div>
 
 <!-- NAV -->
-<nav class="nav">
-  <div class="nav-left">Lann</div>
-  <div class="nav-right">
-    <a href="index.html" class="active">HOME</a>
+<header class="nav-wrap">
+  <nav class="nav">
+    <a href="index.html">HOME</a>
     <a href="obfuscation.html">OBFUSCATION</a>
     <a href="#">TOOLS</a>
     <a href="#">RESEARCH</a>
-  </div>
-</nav>
+  </nav>
+</header>
 
 <!-- MAIN HERO -->
 <main class="hero">
   <div class="hero-left">
-    <div class="brand">Lann.exe</div>
-    <div class="typewriter" id="typewriter"></div>
-    <div class="cta">
-      <a href="obfuscation.html" class="btn">Open Obfuscation Studio</a>
-    </div>
+    <div class="script-title">Lann</div>
+    <div class="big-title">CYBERPUNK</div>
 
-    <div class="features">
-      <div class="feature">
-        <h4>Anti-Analysis</h4>
-        <p>Virtualized preview • visual-only demo</p>
-      </div>
-      <div class="feature">
-        <h4>Premium UI</h4>
-        <p>High-end cyberpunk interface</p>
-      </div>
+    <div class="meta">
+      <h2 class="name">Lann.exe</h2>
+      <p class="jp-typewriter"><span id="typewriter"></span><span class="cursor">|</span></p>
+    </div>
+  </div>
+
+  <div class="hero-center">
+    <div class="girl-wrap">
+      <div class="mask-glow" id="maskGlow"></div>
+      <!-- overlay pupil (simulasi) -->
+      <div id="eye-shine"></div>
+      <img id="girl" src="girl.png" alt="Lann">
+      <!-- wind lines -->
+      <canvas id="windCanvas" class="wind-canvas"></canvas>
     </div>
   </div>
 
   <div class="hero-right">
-    <div class="scene">
-      <canvas id="wind-canvas" class="wind-canvas"></canvas>
-      <div class="mask-glow" id="maskGlow"></div>
-      <img id="girl" class="glitch" src="girl.png" alt="Lann">
-      <div id="eye-shine" class="eye-shine"></div>
-    </div>
+    <div class="side-title">Lan.exe</div>
+    <div class="jp-right">未来はコードで書き換えられる。</div>
   </div>
 </main>
 
-<!-- PARTICLES LAYER -->
-<canvas id="particles" class="particles"></canvas>
-
-<script src="js/particles.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
