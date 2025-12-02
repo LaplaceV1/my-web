@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lann.exe — Cyberpunk</title>
+  <link rel="icon" href="../public/favicon.ico" />
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- LOADING OVERLAY -->
+<div id="loading">
+  <div class="loading-box">
+    <div class="loading-lines">
+      <div>Initializing Lann.exe...</div>
+      <div>Loading modules...</div>
+      <div>Decrypting assets...</div>
+      <div>Spawning virtual runtime...</div>
+    </div>
+    <div class="loader-dot">●</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="topbar">
+  <nav class="nav">
+    <a class="nav-item" href="./index.html">HOME</a>
+    <a class="nav-item" href="../src/obfuscation.html">OBFUSCATION</a>
+    <a class="nav-item" href="./index.html#tools">TOOLS</a>
+    <a class="nav-item" href="./index.html#research">RESEARCH</a>
+  </nav>
+</header>
+
+<!-- MAIN HERO -->
+<main class="hero">
+  <div class="hero-inner">
+    <div class="left-block">
+      <div class="script-title">Lann</div>
+      <h1 class="hero-subtitle">Lann.exe</h1>
+      <div class="typewriter" id="typewriterTarget"></div>
+    </div>
+
+    <div class="bg-title">CYBERPUNK</div>
+
+    <!-- particle canvas (behind image) -->
+    <canvas id="particles" class="particles-canvas"></canvas>
+
+    <!-- glow behind mask -->
+    <div class="mask-glow" id="maskGlow"></div>
+
+    <!-- the girl image (must be 450px wide) -->
+    <div class="girl-wrap" id="girlWrap">
+      <img id="girl" src="../public/girl.png" width="450" height="auto" alt="Lann">
+      <!-- optional small shine -->
+      <div class="eye-shine" aria-hidden="true"></div>
+    </div>
+  </div>
+</main>
+
+<script src="./js/main.js"></script>
+</body>
+</html>
